@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Animated } from 'react-native';
 
-class Ball extends Component {
+class RedBall extends Component {
 
   componentWillMount() {
     this.position = new Animated.ValueXY(0, 0);
@@ -12,9 +12,11 @@ class Ball extends Component {
 
   render() {
     return (
-      <Animated.View style={this.position.getLayout()}>
-        <View style={styles.ball} />
-      </Animated.View>
+      <View style={styles.red}>
+        <Animated.View style={this.position.getLayout()}>
+          <View style={styles.ball} />
+        </Animated.View>
+      </View>
     );
   }
 }
@@ -26,7 +28,11 @@ const styles = {
     borderRadius: 30,
     borderWidth: 30,
     borderColor: 'black',
+  },
+  red: {
+    flex: 1,
+    backgroundColor: 'red',
   }
 };
 
-export default Ball;
+export default RedBall;
