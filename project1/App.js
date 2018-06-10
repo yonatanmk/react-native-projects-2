@@ -1,23 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import App from './src'
 
-import Ball from './src/ball'
-
-export default class App extends React.Component {
+export default class extends React.Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Ball />
-      </View>
-    )
+    return <App />
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-  },
-});
