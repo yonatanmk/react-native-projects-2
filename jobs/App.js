@@ -1,13 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator, TabNavigator, createStackNavigator } from 'react-navigation';
+import { Provider } from 'react-redux';
 
-import AuthScreen from './src/AuthScreen';
-import WelcomeScreen from './src/WelcomeScreen';
-import MapScreen from './src/MapScreen';
-import DeckScreen from './src/DeckScreen';
-import ReviewScreen from './src/ReviewScreen';
-import SettingsScreen from './src/SettingsScreen';
+import store from './src/store';
+import AuthScreen from './src/screens/AuthScreen';
+import WelcomeScreen from './src/screens/WelcomeScreen';
+import MapScreen from './src/screens/MapScreen';
+import DeckScreen from './src/screens/DeckScreen';
+import ReviewScreen from './src/screens/ReviewScreen';
+import SettingsScreen from './src/screens/SettingsScreen';
 
 export default class App extends React.Component {
   render() {
@@ -26,12 +28,19 @@ export default class App extends React.Component {
           }
         })
       }
+    }, {
+      navigationOptions: {
+        tabBarVisible: false,
+      },
+      lazy: true,
     });
 
     return (
-      <View style={styles.container}>
-        <MainNavigator />
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <MainNavigator />
+        </View>
+      </Provider>
     );
   }
 }
