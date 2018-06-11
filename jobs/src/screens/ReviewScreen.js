@@ -6,13 +6,6 @@ class ReviewScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: 'Review Jobs',
-      // header: misc => {
-      //   return {
-      //     right: <Button title="Settings" onPress={() => {
-      //       console.log(misc)
-      //     }}/>
-      //   }
-      // }
       headerRight: (
         <Button
           title="Settings"
@@ -21,16 +14,7 @@ class ReviewScreen extends Component {
           color="rgba(0, 122, 255, 1)"
         />
       ),
-      headerStyle: {
-        // marginTop: Platform.OS === 'android' ? 24 : 0,
-        // backgroundColor: 'red,'
-      },
       // headerLeft: <Text>Go Left</Text>,
-      // headerTitleStyle: {
-      //   alignSelf: 'center',
-      //   textAlign: 'center',
-      //   backgroundColor: 'red'
-      // },
     }
   }
 
