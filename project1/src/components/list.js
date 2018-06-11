@@ -12,14 +12,15 @@ class List extends Component {
     // Alert.alert('Helloo')
   }
 
-  listItemNavigation = () => {
-    this.props.navigation.push('counter')
+  listItemNavigation = path => {
+    this.props.navigation.push(path)
   }
 
   render() {
     return (
       <ScrollView onScrollEndDrag={this.endScrollAlert}>
-        <ListItem title='Counter' onPress={this.listItemNavigation}/>
+        <ListItem title='Counter' onPress={() => this.listItemNavigation('counter')}/>
+        <ListItem title='Form Input' onPress={() => this.listItemNavigation('formInput')}/>
       </ScrollView>
     );
   }

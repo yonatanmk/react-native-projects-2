@@ -8,6 +8,7 @@ import RedBall from './components/red-ball';
 import BlueBall from './components/blue-ball';
 import List from './components/list';
 import Counter from './components/counter';
+import FormInput from './components/form-input';
 
 export default class extends React.Component {
   render() {
@@ -18,6 +19,7 @@ export default class extends React.Component {
         screen: createStackNavigator({
           list: { screen: List },
           counter: { screen: Counter },
+          formInput: { screen: FormInput },
         })
       }
     }, {
