@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { View, Animated } from 'react-native';
 
-class RedBall extends Component {
+class BlueBall extends Component {
 
   componentWillMount() {
-    this.position = new Animated.ValueXY(0, 0);
+    console.log('blue ball will mount')
+    this.position = new Animated.ValueXY({ x: 200, y: 500 });
     Animated.spring(this.position, {
-      toValue: { x: 200, y: 500 }
+      toValue: { x: 0, y: 0 }
     }).start();
+  }
+
+  componentDidMount() {
+    console.log('blue ball did mount')
   }
 
   render() {
@@ -31,8 +36,8 @@ const styles = {
   },
   red: {
     flex: 1,
-    backgroundColor: 'red',
+    backgroundColor: 'blue',
   }
 };
 
-export default RedBall;
+export default BlueBall;

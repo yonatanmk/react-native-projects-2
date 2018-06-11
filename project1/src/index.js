@@ -1,21 +1,35 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { createBottomTabNavigator } from 'react-navigation';
+import { Provider } from 'react-redux'
+import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 
-import RedBall from './red-ball';
-import BlueBall from './blue-ball'
+import store from './store';
+import RedBall from './components/red-ball';
+import BlueBall from './components/blue-ball';
+import List from './components/list';
+import Counter from './components/counter';
 
 export default class extends React.Component {
   render() {
     const MainNavigator = createBottomTabNavigator({
       redBall: { screen: RedBall },
       blueBall: { screen: BlueBall },
+      list: {
+        screen: createStackNavigator({
+          list: { screen: List },
+          counter: { screen: Counter },
+        })
+      }
+    }, {
+      lazy: true,
     });
 
     return (
-      <View style={styles.container}>
-        <MainNavigator />
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <MainNavigator />
+        </View>
+      </Provider>
     )
   }
 }
