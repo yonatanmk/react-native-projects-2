@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, Platform } from 'react-native';
 import { Button } from 'react-native-elements';
 
-import HeaderTitle from './HeaderTitle';
-
 class ReviewScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
