@@ -7,6 +7,13 @@ import { Button, Icon } from 'react-native-elements';
 import * as actions from '../actions';
 
 class MapScreen extends Component {
+  static navigationOptions = {
+    title: 'Map',
+    tabBarIcon: ({ tintColor }) => {
+      return <Icon name="my-location" size={30} color={tintColor} />;
+    },
+  }
+
   constructor(props) {
     super(props)
 

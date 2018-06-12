@@ -10,11 +10,9 @@ import Swipe from '../components/Swipe';
 class DeckScreen extends Component {
   static navigationOptions = {
     title: 'Jobs',
-    // tabBar: {
-    //   icon: ({ tintColor }) => {
-    //     return <Icon name="description" size={30} color={tintColor} />;
-    //   }
-    // }
+    tabBarIcon: ({ tintColor }) => {
+      return <Icon name="description" size={30} color={tintColor} />;
+    },
   }
 
   renderCard(job) {
