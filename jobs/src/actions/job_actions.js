@@ -39,13 +39,13 @@ export const fetchJobs = (region, callback) => async (dispatch) => {
   }
 };
 
-// export const likeJob = (job) => {
-//   return {
-//     payload: job,
-//     type: LIKE_JOB
-//   };
-// };
-//
-// export const clearLikedJobs = () => {
-//   return { type: CLEAR_LIKED_JOBS };
-// };
+export const likeJob = job => {
+  return {
+    payload: job,
+    type: LIKE_JOB
+  };
+};
+
+export const clearLikedJobs = () => {
+  return { type: CLEAR_LIKED_JOBS };
+};

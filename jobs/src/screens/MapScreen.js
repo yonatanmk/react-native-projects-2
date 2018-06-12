@@ -63,25 +63,6 @@ class MapScreen extends Component {
         </View>
       </View>
     )
-
-    // return (
-    //   <View style={{ flex: 1, justifyContent: 'center' }}>
-    //     <MapView
-    //       style={{ flex: 1 }}
-    //       region={ this.state.region }
-    //       onRegionChangeComplete={ this.onRegionChangeComplete }
-    //     />
-    //     <View style={styles.buttonContainer}>
-    //       <Button
-    //         large
-    //         title="Search This Area"
-    //         backgroundColor="#009688"
-    //         icon={{ name: 'search' }}
-    //         onPress={this.onButtonPress}
-    //       />
-    //     </View>
-    //   </View>
-    // )
   }
 }
 
