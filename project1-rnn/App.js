@@ -1,8 +1,3 @@
-import React from 'react';
-import App from './src'
+import registerApp from './app/index';
 
-export default class extends React.Component {
-  render() {
-    return <App />
-  }
-}
+registerApp();
