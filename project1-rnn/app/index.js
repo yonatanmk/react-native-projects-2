@@ -1,32 +1,39 @@
 import { Navigation } from 'react-native-navigation';
+import { Provider } from 'react-redux'
+import store from './store';
 
-import Screen1 from './screens/Screen1';
-import Screen2 from './screens/Screen2';
-import Screen3 from './screens/Screen3';
-import Screen4 from './screens/Screen4';
+// import registerScreens from './screens'
+
+import RedBall from './components/red-ball';
+import BlueBall from './components/blue-ball';
+// import List from './components/list';
+import Counter from './components/counter';
+// import FormInput from './components/form-input';
 
 export default () => {
-  Navigation.registerComponent('Screen1', () => Screen1);
-  Navigation.registerComponent('Screen2', () => Screen2);
-  Navigation.registerComponent('Screen3', () => Screen3);
-  Navigation.registerComponent('Screen4', () => Screen4);
+  // registerScreens(store, Provider)
+
+  Navigation.registerComponent('RedBall', () => RedBall);
+  Navigation.registerComponent('BlueBall', () => BlueBall);
+  Navigation.registerComponent('Counter', () => Counter, store, Provider);
 
   Navigation.startTabBasedApp({
     tabs: [
       {
-        label: 'One',
-        screen: 'Screen1',
-        icon: require('./images/icon1.png'),
-        selectedIcon: require('./images/icon1_selected.png'),
-        title: 'Screen One'
+        label: 'Red Ball',
+        screen: 'RedBall',
+        title: 'Red Ball'
       },
       {
-        label: 'Two',
-        screen: 'Screen2',
-        icon: require('./images/icon2.png'),
-        selectedIcon: require('./images/icon2_selected.png'),
-        title: 'Screen Two'
-      }
+        label: 'Blue Ball',
+        screen: 'BlueBall',
+        title: 'Blue Ball'
+      },
+      {
+        label: 'Counter',
+        screen: 'Counter',
+        title: 'Counter'
+      },
     ]
   });
 };
