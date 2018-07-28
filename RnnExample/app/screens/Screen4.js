@@ -4,7 +4,7 @@ import Container from '../components/Container';
 
 class Screen extends Component {
   handlePress = () => {
-    // this.props.navigator.dismissModal();
+    this.props.navigator.dismissModal();
   };
 
   render() {

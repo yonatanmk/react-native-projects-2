@@ -4,10 +4,10 @@ import Container from '../components/Container';
 
 class Screen extends Component {
   handlePress = () => {
-    // this.props.navigator.push({
-    //   screen: 'Screen3',
-    //   title: 'Screen 3',
-    // });
+    this.props.navigator.push({
+      screen: 'Screen3',
+      title: 'Screen 3',
+    });
   };
 
   render() {

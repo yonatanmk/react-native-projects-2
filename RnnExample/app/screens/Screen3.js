@@ -4,10 +4,10 @@ import Container from '../components/Container';
 
 class Screen extends Component {
   handlePress = () => {
-    // this.props.navigator.showModal({
-    //   screen: 'Screen4',
-    //   title: 'Screen 4',
-    // });
+    this.props.navigator.showModal({
+      screen: 'Screen4',
+      title: 'Screen 4',
+    });
   };
 
   render() {
